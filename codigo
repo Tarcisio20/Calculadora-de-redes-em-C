@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //VARIAVEIS DO IP
+    int octeto1, octeto2, octeto3, octeto4;
+    int vetorIp[4];
+     //VARIAVEIS DA MASCARA
+    int mascara1, mascara2, mascara3, mascara4;
+    int vetorMascara[4];
+    //VARIAVEIS PARA AND
+    int and1,and2,and3,and4;
+    printf("#--------------------------------# \n");
+    printf("#      CALCULADORA DE REDES      # \n");
+    printf("#--------------------------------# \n");
+    //PRIMEIRO OCTETO
+    printf("Digite a PRIMEIRA parte do IP \n");
+    scanf("%i",&octeto1);
+    vetorIp[3] = octeto1;
+    //SEGUNDO OCTETO
+     printf("Digite a SEGUNDA parte do IP \n");
+    scanf("%i",&octeto2);
+    vetorIp[2] = octeto2;
+     //TERCEIRO OCTETO
+     printf("Digite a TERCEIRA parte do IP \n");
+    scanf("%i",&octeto3);
+    vetorIp[1] = octeto3;
+     //QUARTO OCTETO
+     printf("Digite a QUARTA parte do IP \n");
+    scanf("%i",&octeto4);
+    vetorIp[0] = octeto4;
+
+system("cls");
+    printf("IP: %i.%i.%i.%i  \n",vetorIp[3],vetorIp[2],vetorIp[1],vetorIp[0]);
+
+     //PRIMEIRO OCTETO MASCARA
+     printf("Digite a PRIMEIRA parte do MASCARA \n");
+        scanf("%i",&mascara1);
+        vetorMascara[3] = mascara1;
+     //SEGUNDA OCTETO MASCARA
+     printf("Digite a SEGUNDA parte do MASCARA \n");
+        scanf("%i",&mascara2);
+        vetorMascara[2] = mascara2;
+     //TERCEIRA OCTETO MASCARA
+     printf("Digite a TERCEIRA parte do MASCARA \n");
+    scanf("%i",&mascara3);
+    vetorMascara[1] = mascara3;
+     //PRIMEIRO OCTETO MASCARA
+     printf("Digite a QUARTA parte do MASCARA \n");
+    scanf("%i",&mascara4);
+    vetorMascara[0] = mascara4;
+    system("cls");
+    printf("IP: %i.%i.%i.%i  \n ",vetorIp[3],vetorIp[2],vetorIp[1],vetorIp[0]);
+    printf("MASCARA: %i.%i.%i.%i  \n ",vetorMascara[3],vetorMascara[2],vetorMascara[1],vetorMascara[0]);
+
+    and1 = vetorIp[3] & vetorMascara[3];
+    and2 = vetorIp[2] & vetorMascara[2];
+    and3 = vetorIp[1] & vetorMascara[1];
+    and4 = vetorIp[0] & vetorMascara[0];
+
+    printf("\n \n O IP RESULTANTE EH  %i.%i.%i.%i ",and1,and2,and3,and4);
+
+    // printf("o OCTETO 01 e %i e o 02 e %i e 03 e %i  e o 04 e %i \n", vetorIp[3],vetorIp[2], vetorIp[1], vetorIp[0]);
+    //printf("o OCTETO da MASCARA 01 e %i e o 02 e %i e 03 e %i  e o 04 e %i \n", vetorMascara[3],vetorMascara[2], vetorMascara[1], vetorMascara[0]);
+    system("pause");
+    return 0;
+}
